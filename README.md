@@ -1,4 +1,9 @@
 # Spring NATS
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+![](https://img.shields.io/badge/Package-JAR-2396ad)
+![](https://img.shields.io/badge/Repository-Maven%20Central-2396ad)  
+![](https://github.com/wigforss/spring-nats/workflows/Test%20and%20Deploy/badge.svg)
+
 Add the following dependency.
 ```
  <dependency>
