@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://kasource.org/schema/spring-nats"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://kasource.org/schema/spring-nats"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+
+    <xsd:element name="connection">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures the NATS connection
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="tls" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:attribute name="enabled" type="xsd:boolean" use="optional" default="false">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    Enable TLS, default false.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="trust-store" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    The spring resource location url to the trust store to use, not settings this attribute will trust all known CA:s
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="trust-store-password" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    The password for the trust store if used.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="identity-store" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    The spring resource location url to the identity store to use (containing the client certificate), will enable mutual TLS.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="identity-store-password" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    The password for the identity store if used.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="jwt" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:attribute name="token" type="xsd:string" use="required">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    The JWT token to use (base64)
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="n-key" type="xsd:string" use="required">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    The N Key to use (base64)
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:string" use="optional" default="springNatsConnection">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The Bean ID to use. Default value is springNatsConnection
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="urls" type="xsd:string" use="optional" default="nats://localhost:4222">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        URLs to the NATS Server. Default value is nats://localhost:4222, supports comma separated list of URLs.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="connection-timeout-seconds" type="xsd:int" use="optional" default="2">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The number of seconds before timing out a connection attempt.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="drain-timeout-seconds" type="xsd:int" use="optional" default="2">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The number of seconds to wait while draining messages before closing a consumer.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="max-reconnects" type="xsd:int" use="optional" default="60">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The maximum number of reconnects before failing, -1 for infinite reconnects.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="name" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Optional connection name.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="connection-listener" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Bean name of a io.nats.client.ConnectionListener to use
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="error-listener" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Bean name of io.nats.client.ErrorListener to use
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="username" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The username to connect as. Note that the password attribute needs to be set.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="password" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The password used for the connection. Note that the username attribute needs to be set.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+
+    </xsd:element>
+
+    <xsd:attributeGroup name="common-config">
+        <xsd:attribute name="connection-url" type="xsd:string" use="optional" default="nats://localhost:4222">
+            <xsd:annotation>
+                <xsd:documentation>
+                    URL to the NATS Server. Default value is nats://localhost:4222, supports comma separated list of URLs.
+                    Is mutually exclusive with the connection attribute, if connection is set this attribute is ignored.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="connection" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    Override the connection bean by using a &lt;nats:connection/&gt; tag, this allow for more configuration options,
+                    is mutually exclusive with the connection-url attribute.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="object-validator" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    The bean name of the object validator to use when validating objects.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="meter-registry" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    The bean name of the Micrometer meter registry to use. If not set, a bean of type io.micrometer.core.instrument.MeterRegistry is expected to be found in Application Context.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="metrics-enabled" type="xsd:boolean" default="true">
+            <xsd:annotation>
+                <xsd:documentation>
+                    Enable metrics, Micro Meter metrics can be disbaled by settings this to false.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="auto-start-consumers" type="xsd:boolean" use="optional" default="true">
+            <xsd:annotation>
+                <xsd:documentation>
+                    Decide whether to auto start all consumers or not. If set to true the start method must be invoked on
+                    the NatsConsumerManager in order to start consuming messages.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:attributeGroup>
+
+    <xsd:element name="custom">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for custom serialization / de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+            <xsd:attribute name="message-serde-factory" type="xsd:string" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                       Bean name of the custom ser-de factory to use.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="jackson">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Jackson (fasterXML) JSON
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+            <xsd:attribute name="object-mapper" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The bean name of the object mapper to use. Default will lookup the ObjectMapper in the ApplicationContext
+                        via type.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="json-schema-scan-packages" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Enables json schema validation, requires the dependency se.hiq.oss:json-schema-discovery on the classpath.
+
+                        Set the base package to scan for classes that are annotated with @org.kasource.json.schema.JsonSchema, supports
+                        comma separated list of base packages.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="gson">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Gson JSON
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+            <xsd:attribute name="gson" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The bean name of the Gson instance to use. Default will lookup the Gson in the ApplicationContext
+                        via type.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="java">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for plain Java serialization and de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="protobuf">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Google Protocal Buffers serialization and de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="thrift">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Thrift serialization and de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="avro">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Avro serialization and de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="jaxb">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Avro serialization and de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="kryo">
+        <xsd:annotation>
+            <xsd:documentation>
+                This element configures Spring NATS for Avro serialization and de-serialization.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attributeGroup ref="common-config"/>
+            <xsd:attribute name="kryo-factory" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Bean name of the KryoFactory to use (overrides the default one).
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

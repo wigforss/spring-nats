@@ -1,0 +1,10 @@
+<connection></connection>
+
+<nats connection="" serde="" data-validation="" object-validation="">
+    <consumer-manager></consumer-manager>
+    <template></template>
+</nats>
+
+
+
+

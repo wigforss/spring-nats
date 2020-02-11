@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://kasource.org/schema/nats/test/person"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://kasource.org/schema/nats/test/person"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+
+    <xsd:element name="person">
+        <xsd:annotation>
+            <xsd:documentation>
+                Person
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="name" type="name" use="required"/>
+            <xsd:attribute name="age" type="age" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:simpleType name="age">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="120"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="name">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
