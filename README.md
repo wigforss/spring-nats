@@ -3,6 +3,9 @@
 ![](https://img.shields.io/badge/Package-JAR-2396ad)
 ![](https://img.shields.io/badge/Repository-Maven%20Central-2396ad)  
 ![](https://github.com/wigforss/spring-nats/workflows/Test%20and%20Deploy/badge.svg)
+[![codecov](https://codecov.io/gh/wigforss/spring-nats/branch/master/graph/badge.svg)](https://codecov.io/gh/wigforss/spring-nats)
+
+
 
 Add the following dependency.
 ```
