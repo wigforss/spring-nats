@@ -230,7 +230,7 @@
             <xsd:attribute name="json-schema-scan-packages" type="xsd:string" use="optional">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Enables json schema validation, requires the dependency se.hiq.oss:json-schema-discovery on the classpath.
+                        Enables json schema validation, requires the dependency org.kasource:json-schema-registry on the classpath.
 
                         Set the base package to scan for classes that are annotated with @org.kasource.json.schema.JsonSchema, supports
                         comma separated list of base packages.

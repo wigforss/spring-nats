@@ -65,14 +65,14 @@ public interface NatsConsumerManager {
 
     /**
      * Register a method of an object as a NATS message listener.
-     * The method is expected to be annotated with se.hiq.oss.spring.nats.annotation.Consumer.
+     * The method is expected to be annotated with org.kasource.spring.nats.annotation.Consumer.
      *
      * @param bean      Object which has the method
      * @param method    The method to invoke on incoming messages
      *
      * @return A SmartLifecycle object, so that the listeners lifecycle can be handled.
      *
-     * @throws IllegalArgumentException if the method is annotated with se.hiq.oss.spring.nats.annotation.Consumer
+     * @throws IllegalArgumentException if the method is annotated with org.kasource.spring.nats.annotation.Consumer
      */
     SmartLifecycle register(Object bean, Method method);
 

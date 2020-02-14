@@ -11,7 +11,7 @@
 Add the following dependency.
 ```
  <dependency>
-    <groupId>se.hiq.oss</groupId>
+    <groupId>org.kasource</groupId>
     <artifactId>spring-nats</artifactId>
     <version>${spring.nats.version}</version>
 </dependency>
@@ -49,7 +49,7 @@ The annotation-based configuration relies on properties, but no properties are r
 
 ## Minimal Configuration
 ```
-@Import(se.hiq.oss.spring.nats.config.java.NatsConfiguration)
+@Import(org.kasource.spring.nats.config.java.NatsConfiguration)
 @Configuration
 public class MyConfiguration {
     @Bean
@@ -63,7 +63,7 @@ chose the serialization / de-serialization framework.
  
 Jackson will be chosen by the default SerDe selection strategy if its available on classpath otherwise it will try GSON and finally fall back to Java standard serialization.
 
-The SerDe selection strategy can be overridden by adding your own bean of type se.hiq.oss.spring.nats.message.serde.SerDeSelectionStrategy to the Application Context. 
+The SerDe selection strategy can be overridden by adding your own bean of type org.kasource.spring.nats.message.serde.SerDeSelectionStrategy to the Application Context. 
 
 A bean of type *com.fasterxml.jackson.databind.ObjectMapper* must be available in the Application Context if Jackson is chosen (is found on classpath). 
 
@@ -71,16 +71,16 @@ Likewise for GSON a bean of type *com.google.gson.Gson* must be available in the
 
 
 ## Configure via XML Namespace
-The NATS support can be configured via the NATS XML Namespace *http://oss.hiq.se/schema/nats*
+The NATS support can be configured via the NATS XML Namespace *http://kasource.org/schema/nats*
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:nats="http://oss.hiq.se/schema/nats"
+    xmlns:nats="http://kasource.org/schema/nats"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://oss.hiq.se/schema/nats http://oss.hiq.se/schema/nats">
+        http://kasource.org/schema/nats http://kasource.org/schema/nats">
 
     ...
 
@@ -161,7 +161,7 @@ To support more detailed configuration of the connection, its possible to overri
 ```
 
 ## Sending Messages
-Once the spring-nats is initialized a bean of type **se.hiq.oss.spring.nats.publisher.NatsTemplate** will be available for injection (autowiring).
+Once the spring-nats is initialized a bean of type **org.kasource.spring.nats.publisher.NatsTemplate** will be available for injection (autowiring).
 
 ```
     @Autowired
@@ -172,10 +172,10 @@ Once the spring-nats is initialized a bean of type **se.hiq.oss.spring.nats.publ
 ```
 
 ## Receiving Messages
-Messages can be read by setting a Consumer either by annotating a bean method with ```@se.hiq.oss.spring.nats.annotation.Consumer``` or by registering a **java.util.function.Consumer**. 
+Messages can be read by setting a Consumer either by annotating a bean method with ```@org.kasource.spring.nats.annotation.Consumer``` or by registering a **java.util.function.Consumer**. 
 
 ### Annotated Methods 
-By annotating a bean method with ```@se.hiq.oss.spring.nats.annotation.Consumer```. This method must be public with one and only one argument and void return type.
+By annotating a bean method with ```@org.kasource.spring.nats.annotation.Consumer```. This method must be public with one and only one argument and void return type.
 ```
  ...
     @Consumer(subject = "a-subject")

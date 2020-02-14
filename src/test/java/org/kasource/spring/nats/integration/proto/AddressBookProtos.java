@@ -2734,7 +2734,7 @@ public final class AddressBookProtos {
       "\n\004type\030\002 \001(\0162\032.tutorial.Person.PhoneType" +
       ":\004HOME\"+\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020" +
       "\001\022\010\n\004WORK\020\002\"/\n\013AddressBook\022 \n\006people\030\001 \003" +
-      "(\0132\020.tutorial.PersonB1\n\034se.hiq.oss.sprin" +
+      "(\0132\020.tutorial.PersonB1\n\034org.kasource.sprin" +
       "g.nats.protoB\021AddressBookProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
