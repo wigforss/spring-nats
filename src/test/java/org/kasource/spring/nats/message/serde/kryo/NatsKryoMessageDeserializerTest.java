@@ -2,6 +2,10 @@ package org.kasource.spring.nats.message.serde.kryo;
 
 import java.util.Optional;
 
+import org.kasource.spring.nats.exception.DeserializeException;
+import org.kasource.spring.nats.integration.kryo.Project;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -10,18 +14,15 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-import com.esotericsoftware.kryo.Kryo;
-import com.esotericsoftware.kryo.io.Input;
 import io.nats.client.Message;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.exception.DeserializeException;
-import org.kasource.spring.nats.integration.kryo.Project;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryo.io.Input;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NatsKryoMessageDeserializerTest {

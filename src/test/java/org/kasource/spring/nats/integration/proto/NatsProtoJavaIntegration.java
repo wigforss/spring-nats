@@ -11,14 +11,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import org.kasource.spring.nats.NatsTemplate;
+import org.kasource.spring.nats.consumer.NatsConsumerManagerImpl;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.NatsTemplate;
-import org.kasource.spring.nats.consumer.NatsConsumerManagerImpl;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = NatsProtoJavaConfiguration.class)

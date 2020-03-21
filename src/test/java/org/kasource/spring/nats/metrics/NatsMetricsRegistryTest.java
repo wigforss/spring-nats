@@ -2,16 +2,19 @@ package org.kasource.spring.nats.metrics;
 
 import java.util.function.ToDoubleFunction;
 
+import static org.kasource.spring.nats.metrics.NatsMetricsRegistry.CONNECTION_PREFIX;
+import static org.kasource.spring.nats.metrics.NatsMetricsRegistry.SUBSCRIPTION_PREFIX;
+import org.kasource.spring.nats.event.NatsErrorEvent;
+import org.kasource.spring.nats.event.NatsExceptionEvent;
+import org.kasource.spring.nats.event.NatsSlowConsumerEvent;
+
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static org.kasource.spring.nats.metrics.NatsMetricsRegistry.CONNECTION_PREFIX;
-import static org.kasource.spring.nats.metrics.NatsMetricsRegistry.SUBSCRIPTION_PREFIX;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tag;
@@ -23,9 +26,6 @@ import io.nats.client.Subscription;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.event.NatsErrorEvent;
-import org.kasource.spring.nats.event.NatsExceptionEvent;
-import org.kasource.spring.nats.event.NatsSlowConsumerEvent;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;

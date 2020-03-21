@@ -4,10 +4,6 @@ import java.io.File;
 
 import org.springframework.util.SocketUtils;
 
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 import org.kasource.spring.nats.integration.avro.NatsAvroJavaIntegration;
 import org.kasource.spring.nats.integration.avro.NatsAvroXmlIntegration;
 import org.kasource.spring.nats.integration.custom.NatsCustomJavaIntegration;
@@ -26,6 +22,11 @@ import org.kasource.spring.nats.integration.thrift.NatsThriftJavaIntegration;
 import org.kasource.spring.nats.integration.thrift.NatsThriftXmlIntegration;
 import org.kasource.spring.nats.integration.xml.NatsJaxbJavaIntegration;
 import org.kasource.spring.nats.integration.xml.NatsJaxbXmlIntegration;
+
+import org.junit.BeforeClass;
+import org.junit.ClassRule;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 import org.testcontainers.containers.DockerComposeContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
 

@@ -4,10 +4,11 @@ package org.kasource.spring.nats.event;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.nats.client.Connection;
 import io.nats.client.Consumer;
 import io.nats.client.ErrorListener;
+
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 @SuppressFBWarnings(value = "UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR",
                     justification = "Spring provides the eventPublisher")

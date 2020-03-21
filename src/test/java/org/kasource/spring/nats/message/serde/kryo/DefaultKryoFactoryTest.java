@@ -7,13 +7,13 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
-
-import com.esotericsoftware.kryo.Kryo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import com.esotericsoftware.kryo.Kryo;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DefaultKryoFactoryTest {

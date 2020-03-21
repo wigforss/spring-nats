@@ -1,12 +1,12 @@
 package org.kasource.spring.nats.message.serde.kryo;
 
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;

@@ -7,7 +7,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
-
 import io.nats.client.Connection;
 import io.nats.client.Consumer;
 import org.junit.Before;

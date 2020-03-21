@@ -3,8 +3,9 @@ package org.kasource.spring.nats.message;
 import java.io.Serializable;
 import java.util.Date;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 public class ErrorMessage implements Serializable {
     private static final long serialVersionUID = 7193952441991217423L;

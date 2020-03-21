@@ -3,18 +3,18 @@ package org.kasource.spring.nats.message.serde.thrift;
 import java.util.Map;
 import java.util.Optional;
 
+import org.kasource.spring.nats.integration.thrift.CrossPlatformResource;
+import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.integration.thrift.CrossPlatformResource;
-import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;

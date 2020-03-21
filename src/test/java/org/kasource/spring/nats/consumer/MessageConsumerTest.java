@@ -4,19 +4,19 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import org.kasource.spring.nats.metrics.NatsMetricsRegistry;
+
 import static org.hamcrest.Matchers.stringContainsInOrder;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
-
 import io.nats.client.Connection;
 import io.nats.client.Dispatcher;
 import io.nats.client.MessageHandler;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.metrics.NatsMetricsRegistry;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.unitils.inject.util.InjectionUtils;

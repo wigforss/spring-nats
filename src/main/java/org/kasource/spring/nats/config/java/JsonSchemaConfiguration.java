@@ -13,8 +13,9 @@ import static org.kasource.spring.nats.config.NatsBeans.JSON_SCHEMA_VALIDATOR_FA
 import org.kasource.json.schema.JsonSchemaScanner;
 import org.kasource.spring.nats.message.validation.JsonSchemaValidator;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Enable Optional JSON Schema validation for Jackson SerDe.

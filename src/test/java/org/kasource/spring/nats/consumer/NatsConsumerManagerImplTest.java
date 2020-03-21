@@ -9,19 +9,19 @@ import java.util.function.Consumer;
 import org.springframework.context.SmartLifecycle;
 import org.springframework.util.ReflectionUtils;
 
+import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
+import org.kasource.spring.nats.metrics.NatsMetricsRegistry;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import io.nats.client.Connection;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
-import org.kasource.spring.nats.metrics.NatsMetricsRegistry;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;

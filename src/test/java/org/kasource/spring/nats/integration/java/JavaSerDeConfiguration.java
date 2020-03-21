@@ -7,10 +7,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 import org.kasource.spring.nats.config.java.NatsJava;
 import org.kasource.spring.nats.message.validation.BeanValidationValidator;
 import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
+import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 
 @Import(NatsJava.class)
 @Configuration

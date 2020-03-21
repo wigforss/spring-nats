@@ -2,18 +2,19 @@ package org.kasource.spring.nats.message.serde.protobuf;
 
 import java.util.Optional;
 
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-import com.google.protobuf.Message;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import com.google.protobuf.Message;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ProtobufMessageSerializerTest {

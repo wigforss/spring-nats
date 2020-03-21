@@ -4,13 +4,14 @@ import java.lang.reflect.Constructor;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
-import io.nats.client.Message;
 import org.kasource.spring.nats.exception.DeserializeException;
 import org.kasource.spring.nats.exception.SerializeException;
 import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
 import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
 import org.kasource.spring.nats.message.serde.NatsMessageSerializer;
 import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
+import io.nats.client.Message;
 
 public class CustomSerDeFactory implements NatsMessageSerDeFactory {
 

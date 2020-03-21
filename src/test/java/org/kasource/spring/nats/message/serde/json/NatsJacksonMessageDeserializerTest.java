@@ -4,21 +4,22 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
+import org.kasource.spring.nats.message.validation.JsonSchemaValidator;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
 import io.nats.client.Message;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.validation.JsonSchemaValidator;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NatsJacksonMessageDeserializerTest {

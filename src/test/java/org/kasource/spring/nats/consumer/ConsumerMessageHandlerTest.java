@@ -2,16 +2,16 @@ package org.kasource.spring.nats.consumer;
 
 import java.util.function.Consumer;
 
+import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
+import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
-
 import io.nats.client.Message;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
-import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 

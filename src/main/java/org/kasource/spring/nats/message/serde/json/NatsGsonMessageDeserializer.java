@@ -6,8 +6,9 @@ import java.util.Optional;
 import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
 import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 
-import com.google.gson.Gson;
 import io.nats.client.Message;
+
+import com.google.gson.Gson;
 
 public class NatsGsonMessageDeserializer implements NatsMessageDeserializer {
 

@@ -3,14 +3,14 @@ package org.kasource.spring.nats.logging;
 import java.util.List;
 import java.util.Map;
 
+import org.kasource.spring.nats.event.NatsErrorEvent;
+import org.kasource.spring.nats.event.NatsExceptionEvent;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import io.nats.client.Connection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.event.NatsErrorEvent;
-import org.kasource.spring.nats.event.NatsExceptionEvent;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.slf4j.Logger;

@@ -13,7 +13,11 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser;
 import org.springframework.beans.factory.xml.ParserContext;
 
-import static org.kasource.spring.nats.config.NatsBeans.*;
+import static org.kasource.spring.nats.config.NatsBeans.CONSUMER_MANAGER;
+import static org.kasource.spring.nats.config.NatsBeans.METER_REGISTRY;
+import static org.kasource.spring.nats.config.NatsBeans.NATS_CONNECTION_FACTORY;
+import static org.kasource.spring.nats.config.NatsBeans.NATS_TEMPLATE;
+import static org.kasource.spring.nats.config.NatsBeans.POST_BEAN_PROCESSOR;
 import org.kasource.spring.nats.NatsTemplateImpl;
 import org.kasource.spring.nats.config.xmlns.XmlNamespaceUtils;
 import org.kasource.spring.nats.connection.ConnectionFactoryBean;

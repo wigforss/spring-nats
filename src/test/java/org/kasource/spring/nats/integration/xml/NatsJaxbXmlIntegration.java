@@ -8,16 +8,16 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.kasource.spring.nats.NatsTemplate;
 import org.kasource.spring.nats.consumer.NatsConsumerManagerImpl;
 import org.kasource.spring.nats.exception.SerializeException;
 import org.kasource.spring.nats.integration.NatsTestListener;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 
 @RunWith(SpringRunner.class)

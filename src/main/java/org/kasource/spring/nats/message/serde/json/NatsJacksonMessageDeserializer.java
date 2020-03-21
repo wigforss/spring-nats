@@ -10,9 +10,10 @@ import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
 import org.kasource.spring.nats.message.validation.JsonSchemaValidator;
 import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 
+import io.nats.client.Message;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
-import io.nats.client.Message;
 
 public class NatsJacksonMessageDeserializer implements NatsMessageDeserializer {
 

@@ -3,22 +3,23 @@ package org.kasource.spring.nats.message.serde.json;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
+import org.kasource.spring.nats.message.validation.JsonSchemaValidator;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.validation.JsonSchemaValidator;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NatsJacksonMessageSerializerTest {

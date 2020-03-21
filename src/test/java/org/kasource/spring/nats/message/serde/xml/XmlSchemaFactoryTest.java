@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlSchema;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
+import org.kasource.spring.nats.integration.xml.Person;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -16,10 +18,8 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.integration.xml.Person;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;

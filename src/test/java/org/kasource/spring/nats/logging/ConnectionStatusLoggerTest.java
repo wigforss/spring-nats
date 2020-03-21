@@ -1,13 +1,13 @@
 package org.kasource.spring.nats.logging;
 
+import org.kasource.spring.nats.event.NatsConnectionEvent;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import io.nats.client.Connection;
 import io.nats.client.ConnectionListener;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.event.NatsConnectionEvent;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.slf4j.Logger;

@@ -3,9 +3,10 @@ package org.kasource.spring.nats.event;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.nats.client.Connection;
 import io.nats.client.ConnectionListener;
+
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 
 public class NatsConnectionListener implements ConnectionListener, ApplicationEventPublisherAware {

@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 
+import org.kasource.spring.nats.exception.SerializeException;
+import org.kasource.spring.nats.integration.avro.User;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -13,14 +17,10 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import org.apache.avro.generic.GenericDatumWriter;
 import org.apache.avro.io.BinaryEncoder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.exception.SerializeException;
-import org.kasource.spring.nats.integration.avro.User;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;

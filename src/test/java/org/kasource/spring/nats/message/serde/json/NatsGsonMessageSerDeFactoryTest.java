@@ -4,6 +4,9 @@ import java.util.Map;
 
 import org.springframework.context.ApplicationContext;
 
+import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -12,19 +15,17 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
-
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.unitils.inject.util.InjectionUtils;
+
+import com.google.gson.Gson;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NatsGsonMessageSerDeFactoryTest {

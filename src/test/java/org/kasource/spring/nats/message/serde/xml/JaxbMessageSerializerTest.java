@@ -9,16 +9,16 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.validation.Schema;
 
+import org.kasource.spring.nats.exception.SerializeException;
+import org.kasource.spring.nats.message.validation.MessageObjectValidator;
+
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.exception.SerializeException;
-import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;

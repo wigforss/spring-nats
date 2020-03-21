@@ -7,9 +7,10 @@ import org.kasource.spring.nats.exception.DeserializeException;
 import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
 import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 
+import io.nats.client.Message;
+
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
-import io.nats.client.Message;
 
 public class NatsKryoMessageDeserializer implements NatsMessageDeserializer {
 

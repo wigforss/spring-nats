@@ -16,11 +16,12 @@ import org.kasource.spring.nats.config.xmlns.XmlNamespaceUtils;
 import org.kasource.spring.nats.connection.ConnectionFactoryBean;
 import org.kasource.spring.nats.connection.TlsConfiguration;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.StringUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 @SuppressFBWarnings(value = "UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR",
                     justification = "Spring provides the resourceLoader")

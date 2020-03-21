@@ -5,18 +5,18 @@ import java.util.Optional;
 
 import org.springframework.util.ReflectionUtils;
 
+import org.kasource.spring.nats.exception.MethodInvocationException;
+import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
+import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
-
 import io.nats.client.Message;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kasource.spring.nats.exception.MethodInvocationException;
-import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
-import org.kasource.spring.nats.message.serde.NatsMessageSerDeFactory;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.unitils.inject.util.InjectionUtils;
