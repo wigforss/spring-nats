@@ -11,9 +11,8 @@ import org.springframework.context.ApplicationContextAware;
 
 import org.kasource.json.schema.JsonSchemaScanner;
 
-import org.apache.commons.lang.StringUtils;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang.StringUtils;
 
 public class JsonSchemaValidatorFactoryBean implements FactoryBean<JsonSchemaValidator>, ApplicationContextAware {
 

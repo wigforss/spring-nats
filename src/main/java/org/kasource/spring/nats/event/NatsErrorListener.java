@@ -7,7 +7,6 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import io.nats.client.Connection;
 import io.nats.client.Consumer;
 import io.nats.client.ErrorListener;
-
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 @SuppressFBWarnings(value = "UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR",

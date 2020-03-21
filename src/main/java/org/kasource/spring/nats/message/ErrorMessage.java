@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
-
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 public class ErrorMessage implements Serializable {

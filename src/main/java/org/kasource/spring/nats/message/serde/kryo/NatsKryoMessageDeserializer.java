@@ -8,7 +8,6 @@ import org.kasource.spring.nats.message.serde.NatsMessageDeserializer;
 import org.kasource.spring.nats.message.validation.MessageObjectValidator;
 
 import io.nats.client.Message;
-
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 

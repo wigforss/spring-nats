@@ -5,7 +5,6 @@ import org.springframework.context.ApplicationEventPublisherAware;
 
 import io.nats.client.Connection;
 import io.nats.client.ConnectionListener;
-
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 

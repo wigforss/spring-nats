@@ -4,7 +4,6 @@ import org.springframework.context.ApplicationEvent;
 
 import io.nats.client.Connection;
 import io.nats.client.Consumer;
-
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 

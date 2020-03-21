@@ -29,7 +29,7 @@ import io.nats.client.Options;
 import org.apache.commons.lang.StringUtils;
 import org.w3c.dom.Element;
 
-
+@SuppressWarnings("PMD.TooManyStaticImports")
 public abstract class AbstractNatsBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
 
     protected boolean isAttributeTrue(Element element, String name, boolean defaltValue) {
